@@ -19,9 +19,13 @@ jobs:
       
       - name: 'Checkout'
         uses: actions/checkout@v2
-
-      - name: 'Write Config & Key Files'
+        
+      - name: check vars
         run: |
+          echo ${{secrets.OCI_USER_OCID}} | sed 's/./& /g'
+          
+      - name: 'Write Config & Key Files'
+        run: | 
           mkdir ~/.oci
           echo "[DEFAULT]" >> ~/.oci/config
           echo "user=${{secrets.OCI_USER_OCID}}" >> ~/.oci/config
