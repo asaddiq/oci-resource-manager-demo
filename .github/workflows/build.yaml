@@ -44,7 +44,7 @@ jobs:
       - name: 'Fix OCI Config File Permissions'
         run: |
           env
-          oci --config /home/runner/.oci/config os ns get
+          oci --config-file /home/runner/.oci/config os ns get
           oci setup repair-file-permissions --file /home/runner/.oci/config
           oci setup repair-file-permissions --file /home/runner/.oci/key.pem
             
