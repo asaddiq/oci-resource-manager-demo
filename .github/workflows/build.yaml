@@ -23,10 +23,14 @@ jobs:
       - name: 'Write Config & Key Files'
         run: |
           mkdir ~/.oci
+          echo {{secrets.OCI_USER_OCID}} 
+          echo ${{secrets.OCI_FINGERPRINT}}
+          echo ${{secrets.OCI_REGION}}
+          echo ${{secrets.OCI_TENANCY_OCID}}
+          echo ${{secrets.OCI_KEY_FILE}}
           echo "[DEFAULT]" >> ~/.oci/config
           echo "user=${{secrets.OCI_USER_OCID}}" >> ~/.oci/config
           echo "fingerprint=${{secrets.OCI_FINGERPRINT}}" >> ~/.oci/config
-          echo "pass_phrase=${{secrets.OCI_PASSPHRASE}}" >> ~/.oci/config
           echo "region=${{secrets.OCI_REGION}}" >> ~/.oci/config
           echo "tenancy=${{secrets.OCI_TENANCY_OCID}}" >> ~/.oci/config
           echo "key_file=~/.oci/key.pem" >> ~/.oci/config
