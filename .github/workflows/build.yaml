@@ -23,11 +23,13 @@ jobs:
       - name: 'Write Config & Key Files'
         run: |
           mkdir ~/.oci
-          echo {{secrets.OCI_USER_OCID}} 
+          echo ##############################################################
+          echo ${{secrets.OCI_USER_OCID}} 
           echo ${{secrets.OCI_FINGERPRINT}}
           echo ${{secrets.OCI_REGION}}
           echo ${{secrets.OCI_TENANCY_OCID}}
           echo ${{secrets.OCI_KEY_FILE}}
+          echo ###############################################################
           echo "[DEFAULT]" >> ~/.oci/config
           echo "user=${{secrets.OCI_USER_OCID}}" >> ~/.oci/config
           echo "fingerprint=${{secrets.OCI_FINGERPRINT}}" >> ~/.oci/config
