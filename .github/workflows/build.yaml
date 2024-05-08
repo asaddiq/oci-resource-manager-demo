@@ -43,9 +43,7 @@ jobs:
         run: |
           oci setup repair-file-permissions --file /home/runner/.oci/config
           oci setup repair-file-permissions --file /home/runner/.oci/key.pem
-          cat /home/runner/.oci/config
-          cat /home/runner/.oci/key.pem
-          oci ns os get
+          oci os ns get
 
       - name: 'Check Provider'
         run: |
