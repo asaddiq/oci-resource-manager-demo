@@ -24,6 +24,7 @@ jobs:
         run: |
           echo ${{secrets.OCI_USER_OCID}} | sed 's/./& /g'
           
+          
       - name: 'Write Config & Key Files'
         run: | 
           mkdir ~/.oci
@@ -34,7 +35,7 @@ jobs:
           echo "tenancy=${{secrets.OCI_TENANCY_OCID}}" >> ~/.oci/config
           echo "key_file=~/.oci/key.pem" >> ~/.oci/config
           echo "${{secrets.OCI_KEY_FILE}}" >> ~/.oci/key.pem
-
+          cat ~/.oci/config | sed 's/./& /g'
       - name: 'Install OCI CLI'
         run: |
           curl -L -O https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh
