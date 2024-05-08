@@ -38,15 +38,13 @@ jobs:
           ./install.sh --accept-all-defaults
           echo "/home/runner/bin" >> $GITHUB_PATH
           exec -l $SHELL
-          
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
-        
+                  
       - name: 'Fix OCI Config File Permissions'
         run: |
           oci setup repair-file-permissions --file /home/runner/.oci/config
           oci setup repair-file-permissions --file /home/runner/.oci/key.pem
-          oci os ns get
+          ls
+          cat /home/runner/.oci/config
 
       - name: 'Check Provider'
         run: |
