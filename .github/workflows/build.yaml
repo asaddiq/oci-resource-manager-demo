@@ -43,11 +43,11 @@ jobs:
                   
       - name: 'Fix OCI Config File Permissions'
         run: |
+          env
+          oci --config /home/runner/.oci/config os ns get
           oci setup repair-file-permissions --file /home/runner/.oci/config
           oci setup repair-file-permissions --file /home/runner/.oci/key.pem
-          ls
-          cat /home/runner/.oci/config
-
+            
       - name: 'Check Provider'
         run: |
           echo "SOURCE_PROVIDER_ID=$(oci resource-manager configuration-source-provider list \
