@@ -90,3 +90,7 @@ jobs:
             --execution-plan-job-id $PLAN_JOB_ID \
             --stack-id $STACK_ID \
             --wait-for-state SUCCEEDED | jq '.data.id' -r)" >> $GITHUB_ENV
+      
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+
