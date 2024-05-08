@@ -13,8 +13,8 @@ jobs:
         BRANCH_NAME: "github-actions-resource-manager"
         REPO_URL: "https://github.com/recursivecodes/oci-resource-manager-demo"
         TF_VERSION: "0.13.x"
-        REGION: "us-phoenix-1"
-        BUCKET_NAME: "test_bucket"
+        REGION: "uk-london-1"
+        BUCKET_NAME: "orm_demo_bucket"
     steps:
       
       - name: 'Checkout'
