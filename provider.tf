@@ -5,28 +5,12 @@
 
 
 # ------ Connect to Provider
-provider "oci" {
-  tenancy_ocid     = var.tenancy_ocid
-  user_ocid        = var.user_ocid
-  fingerprint      = var.fingerprint
-  private_key_path = var.private_key_path
-  region           = var.region
-}
 
-# ------ Home Region Provider
-locals {
-    home_region =  var.region
-}
- 
 provider "oci" {
-    alias            = "home_region"
-    tenancy_ocid     = var.tenancy_ocid
-    user_ocid        = var.user_ocid
-    fingerprint      = var.fingerprint
-    private_key_path = var.private_key_path
-    region           = local.home_region
-}
-
-output "Home_Region_Name" {
- value = local.home_region
+  tenancy_ocid = var.tenancy_ocid
+  user_ocid = var.user_ocid
+  fingerprint = var.fingerprint
+  private_key = var.private_key
+  private_key_password = var.private_key_password
+  region = var.region
 }
