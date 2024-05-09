@@ -63,7 +63,7 @@ jobs:
           echo "SOURCE_PROVIDER_ID=$(oci resource-manager configuration-source-provider create-github-access-token-provider \
             --access-token ${{secrets.MY_ACCESS_TOKEN}} \
             --api-endpoint https://github.com/ \
-            --display-name $PROVIDER_NAME \
+            --display-name "$PROVIDER_NAME" \
             --compartment-id ${{secrets.OCI_COMPARTMENT_OCID}} | jq '.data.id' -r)" >> $GITHUB_ENV
 
       - name: 'Create Stack'
