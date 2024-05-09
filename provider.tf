@@ -11,6 +11,5 @@ provider "oci" {
   user_ocid = var.user_ocid
   fingerprint = var.fingerprint
   private_key = var.private_key
-  private_key_password = var.private_key_password
   region = var.region
 }
