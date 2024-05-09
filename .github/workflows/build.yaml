@@ -43,10 +43,11 @@ jobs:
                   
       - name: 'Fix OCI Config File Permissions'
         run: |
-          env
-          oci --config-file /home/runner/.oci/config os ns get
+          ls -lart ~/
           oci setup repair-file-permissions --file /home/runner/.oci/config
           oci setup repair-file-permissions --file /home/runner/.oci/key.pem
+          oci --config-file /home/runner/.oci/config os ns get --debug
+
             
       - name: 'Check Provider'
         run: |
