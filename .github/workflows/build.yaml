@@ -11,7 +11,7 @@ jobs:
         STACK_NAME: "OCI Resource Manager Demo Stack"
         PROVIDER_NAME: "GitHub Source Provider"
         BRANCH_NAME: "github-actions-resource-manager"
-        REPO_URL: "https://github.com/recursivecodes/oci-resource-manager-demo"
+        REPO_URL: "https://github.com/asaddiq/oci-resource-manager-demo"
         TF_VERSION: "1.0.x"
         REGION: "uk-london-1"
         BUCKET_NAME: "orm_demo_bucket"
