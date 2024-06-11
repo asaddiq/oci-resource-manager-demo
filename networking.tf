@@ -100,6 +100,18 @@ resource "oci_core_security_list" "Demo_Sec_List" {
             max = "22"
         }
     }
+    ingress_security_rules {
+        # Required
+        protocol    = "6"
+        source      = "0.0.0.0/0"
+        # Optional
+        source_type  = "CIDR_BLOCK"
+        tcp_options {
+            min = "200"
+            max = "200"
+        }
+    }
+
     # Optional
     display_name   = "demo-sec-list"
 }
