@@ -10,10 +10,10 @@ resource "oci_core_default_dhcp_options" "DefaultDhcpOptionsForDemo_Vcn" {
     }
     options    {
         type  = "SearchDomain"
-        search_domain_names      = ["demo.oraclevcn.com"]
+        search_domain_names      = ["orm_demo.oraclevcn.com"]
     }
     # Optional
-    display_name   = "Default DHCP Options for demo-vcn"
+    display_name   = "Default DHCP Options for orm_demo-vcn"
 }
 
 locals {
@@ -28,7 +28,7 @@ resource "oci_core_internet_gateway" "Demo_Ig" {
     vcn_id         = local.Demo_Vcn_id
     # Optional
     enabled        = true
-    display_name   = "demo-ig"
+    display_name   = "orm_demo-ig"
 }
 
 locals {
@@ -47,7 +47,7 @@ resource "oci_core_route_table" "Demo_Rt" {
         network_entity_id = local.Demo_Ig_id
     }
     # Optional
-    display_name   = "demo-rt"
+    display_name   = "orm_demo-rt"
 }
 
 locals {
@@ -113,7 +113,7 @@ resource "oci_core_security_list" "Demo_Sec_List" {
     # }
 
     # Optional
-    display_name   = "demo-sec-list"
+    display_name   = "orm_demo-sec-list"
 }
 
 locals {
@@ -129,7 +129,7 @@ resource "oci_core_subnet" "Demo_Subnet" {
     vcn_id                     = local.Demo_Vcn_id
     cidr_block                 = "10.0.0.0/28"
     # Optional
-    display_name               = "demo-subnet"
+    display_name               = "orm_demo-subnet"
     dns_label                  = "demosb"
     security_list_ids          = [local.Demo_Sec_List_id]
     route_table_id             = local.Demo_Rt_id
@@ -150,8 +150,8 @@ resource "oci_core_vcn" "Demo_Vcn" {
     compartment_id = local.DeploymentCompartment_id
     cidr_block     = "10.0.0.0/24" 
     # Optional
-    dns_label      = "demo"
-    display_name   = "demo-vcn"
+    dns_label      = "orm_demo"
+    display_name   = "orm_demo-vcn"
 }
 
 locals {
