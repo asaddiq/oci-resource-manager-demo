@@ -150,7 +150,7 @@ resource "oci_core_vcn" "Demo_Vcn" {
     compartment_id = local.DeploymentCompartment_id
     cidr_block     = "10.0.0.0/24" 
     # Optional
-    dns_label      = "orm_demo"
+    dns_label      = "ormdemo"
     display_name   = "orm_demo-vcn"
 }
 
