@@ -11,15 +11,15 @@ resource "oci_core_instance" "Okit_I_1667569695861" {
     compartment_id      = local.DeploymentCompartment_id
     shape               = "VM.Standard.E2.1"
     # Optional
-    display_name        = "db1"
+    display_name        = "orm-db1"
     availability_domain = data.oci_identity_availability_domains.AvailabilityDomains.availability_domains["1" - 1]["name"]
     create_vnic_details {
         # Required
         subnet_id        = local.Demo_Subnet_id
         # Optional
         assign_public_ip = true
-        display_name     = "db1 vnic"
-        hostname_label   = "db1"
+        display_name     = "orm-db1 vnic"
+        hostname_label   = "orm-db1"
         skip_source_dest_check = false
         freeform_tags    = {"OLCNE": "ormdbserver"}
     }
@@ -50,7 +50,7 @@ locals {
     Okit_I_1667569695861_private_ip       = oci_core_instance.Okit_I_1667569695861.private_ip
     Okit_I_1667569695861_display_name     = oci_core_instance.Okit_I_1667569695861.display_name
     Okit_I_1667569695861_compartment_id   = oci_core_instance.Okit_I_1667569695861.compartment_id
-    Okit_I_1667569695861_hostname         = "db1"
+    Okit_I_1667569695861_hostname         = "orm-db1"
     Okit_I_1667569695861_primary_vnic_id  = data.oci_core_private_ips.Okit_I_1667569695861_private_ip.private_ips[0].vnic_id
 }
 
