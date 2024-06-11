@@ -10,7 +10,7 @@ resource "oci_core_default_dhcp_options" "DefaultDhcpOptionsForDemo_Vcn" {
     }
     options    {
         type  = "SearchDomain"
-        search_domain_names      = ["orm_demo.oraclevcn.com"]
+        search_domain_names      = ["ormdemo.oraclevcn.com"]
     }
     # Optional
     display_name   = "Default DHCP Options for orm_demo-vcn"
